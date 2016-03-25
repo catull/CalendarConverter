@@ -1,0 +1,59 @@
+.main {
+  margin-left: 15%;
+  margin-right: 10%;
+  background-color: white;
+  color: black;
+}
+
+dt {
+  margin-top: 1ex;
+}
+
+.ctr {
+  text-align: center
+}
+
+p {
+  text-align: justify;
+}
+
+.c {
+  text-align: center;
+}
+
+.bcad {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.a {
+  float: right;
+  margin-left: 12px;
+  width: 170px;
+}
+
+table {
+  border: 1px outset black;
+  background-color: #D0D0D0;
+  color: black;
+}
+
+table.l {
+  float: left;
+  margin-right: 8px;
+  width: 45%;
+}
+
+table.l td, th {
+  border: 1px inset;
+  padding: 5px;
+}
+
+table.r {
+  float: right;
+  margin-left: 8px;
+}
+
+table.r td, th {
+  border: 1px inset;
+}
