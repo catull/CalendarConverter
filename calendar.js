@@ -240,6 +240,21 @@ function jd_to_julian(td) {
 
 var HEBREW_EPOCH = 347995.5;
 
+var HEBREW_MONTHS = ["\u05E0\u05B4\u05D9\u05E1\u05B8\u05DF",
+    "\u05D0\u05B4\u05D9\u05B8\u05BC\u05E8",
+    "\u05E1\u05B4\u05D9\u05D5\u05B8\u05DF",
+    "\u05EA\u05B7\u05BC\u05DE\u05BC\u05D5\u05BC\u05D6",
+    "\u05D0\u05B8\u05D1", "\u05D0\u05B1\u05DC\u05D5\u05BC\u05DC",
+    "\u05EA\u05B4\u05BC\u05E9\u05C1\u05E8\u05B4\u05D9",
+    "\u05DE\u05B7\u05E8\u05B0\u05D7\u05B6\u05E9\u05B0\u05C1\u05D5\u05B8\u05DF",
+    "\u05DB\u05B4\u05BC\u05E1\u05B0\u05DC\u05B5\u05D5",
+    "\u05D8\u05B5\u05D1\u05B5\u05EA",
+    "\u05E9\u05B0\u05C1\u05D1\u05B8\u05D8",
+    "\u05D0\u05B2\u05D3\u05B8\u05E8 \u05D0\u05F3",
+    "\u05D0\u05B2\u05D3\u05B8\u05E8 \u05D1\u05F3",
+    "\u05D0\u05B2\u05D3\u05B8\u05E8"
+];
+
 //  Is a given Hebrew year a leap year ?
 
 function hebrew_leap(year) {
@@ -943,8 +958,7 @@ function updateFromGregorian() {
     if (hmindex == 12 && !hebrew_leap(hebCal[0])) {
         hmindex = 14;
     }
-    document.hebrewForm.hebmonth.src = "figures/hebrew_month_" +
-        hmindex + ".gif";
+    document.hebrewForm.hebmonth.value = HEBREW_MONTHS[hmindex - 1];
     switch (hebrew_year_days(hebCal[0])) {
         case 353:
             document.hebrewForm.leap.value = "Common deficient (353 days)";
