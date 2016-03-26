@@ -26,23 +26,23 @@
     not have disabled execution of that language. Let's see ...
     <center>
       <form name="warning" action="javascript:return%20false;" id="warning">
-        <input type="text" name="warning" style="background-color: #FFA0A0; color: #000000;" value="Your browser doesn't support JavaScript or it is disabled--you cannot use this calculator." size="70" class="ctr" readonly="readonly" /> </form>
+        <input type="text" name="warning" style="background-color: #ffa0a0; color: #000000;" value="Your browser doesn't support JavaScript or it is disabled--you cannot use this calculator." size="70" class="ctr" readonly="readonly" /> </form>
     </center>
     <script type="text/javascript" language="JavaScript">
-      // &lt; ![CDATA[
+      // <![CDATA[
       <!--
       //  Clear out "sorry, no JavaScript" message from text box.
-      document.warning.warning.value = "Your browser supports JavaScript-" + "-you can use this calculator.";
-      document.warning.warning.style.backgroundColor = "#A0FFA0";
+      document.warning.warning.value = "Your browser supports JavaScript - you can use this calculator.";
+      document.warning.warning.style.backgroundColor = "#a0ffa0";
       // -->
-      //]]&gt;
+      //]]>
 
-    </script>If the box above says &ldqout;Your browser supports JavaScript&rdquot;, you&apos;re in business; simply enter a date in any of the boxes below and press the &ldquot;Calculate&rdquot; button to show that date in all of the other calendars.
+    </script>If the box above says &quot;Your browser supports JavaScript&quot;, you&apos;re in business; simply enter a date in any of the boxes below and press the &quot;Calculate&quot; button to show that date in all of the other calendars.
     <h3>
-    <a name="gregorian" id="gregorian">Gregorian Calendar</a>
+    <a name="gregorianCalendar" id="gregorianCalendar">Gregorian Calendar</a>
   </h3>
-    <form name="gregorian" action="javascript:return%20false;" id="gregorian">
-      <table class="l">
+    <form name="gregorianForm" action="javascript:return%20false;" id="gregorianForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">
@@ -102,16 +102,16 @@
       leap year. As in the Julian calendar, days are considered to begin at midnight.</p>
     <p>The average length of a year in the Gregorian calendar is 365.2425 days compared to the actual solar tropical year (time from equinox to equinox) of 365.24219878 days, so the calendar accumulates one day of error with respect to the solar year about
       every 3300 years. As a purely solar calendar, no attempt is made to synchronise the start of months to the phases of the Moon.</p>
-    <p>While one can't properly speak of &ldquot;Gregorian dates&rdquot; prior to the adoption of the calendar in 1582, the calendar can be extrapolated to prior dates. In doing so, this implementation uses the convention that the year prior to year 1 is
-      year 0. This differs from the Julian calendar in which there is no year 0 &mdash; the year before year 1 in the Julian calendar is year &mdash; 1. The date December 30th, 0 in the Gregorian calendar corresponds to January 1st, 1 in the Julian calendar.</p>
+    <p>While one can't properly speak of &quot;Gregorian dates&quot; prior to the adoption of the calendar in 1582, the calendar can be extrapolated to prior dates. In doing so, this implementation uses the convention that the year prior to year 1 is year
+      0. This differs from the Julian calendar in which there is no year 0 &mdash; the year before year 1 in the Julian calendar is year &mdash; 1. The date December 30th, 0 in the Gregorian calendar corresponds to January 1st, 1 in the Julian calendar.</p>
     <p>A slight modification of the Gregorian calendar would make it even more precise. If you add the additional rule that years evenly divisible by 4000 are <em>not</em>leap years, you obtain an average solar year of 365.24225 days per year which, compared
       to the actual mean year of 365.24219878, is equivalent to an error of one day over a period of about 19,500 years; this is comparable to errors due to tidal braking of the rotation of the Earth.
       <br clear="left" /> </p>
     <h3>
-    <a name="julianday" id="julianday">Julian Day</a>
+    <a name="julianDay" id="julianDay">Julian Day</a>
   </h3>
-    <form name="julianday" action="javascript:return%20false;" id="julianday">
-      <table class="l">
+    <form name="julianDayForm" action="javascript:return%20false;" id="julianDayForm">
+      <table class="l" summary="">
         <tr>
           <td align="center"> <b>Julian day:</b>
             <input type="text" name="day" value="" size="16" /> </td>
@@ -126,13 +126,16 @@
       get out your calendar and count days, but it's far easier to convert all the quantities in question to Julian day numbers and simply add or subtract. Julian days simply enumerate the days and fraction which have elapsed since the start of the <em>Julian era</em>,
       which is defined as beginning at noon on Monday, 1st January of year 4713 <span class="bcad">B.C.E.</span>in the Julian calendar. This date is defined in terms of a cycle of years, but has the additional advantage that all known historical astronomical
       observations bear positive Julian day numbers, and periods can be determined and events extrapolated by simple addition and subtraction. Julian dates are a tad eccentric in starting at noon, but then so are astronomers (and systems programmers!)&mdash;when
-      you've become accustomed to rising after the &ldquot;crack of noon&rdquot; and doing most of your work when the Sun is down, you appreciate recording your results in a calendar where the date doesn't change in the middle of your workday. But even
-      the Julian day convention bears witness to the eurocentrism of 19th century astronomy&mdash;noon at Greenwich is midnight on the other side of the world. But the Julian day notation is so deeply embedded in astronomy that it is unlikely to be displaced
+      you've become accustomed to rising after the &quot;crack of noon&quot; and doing most of your work when the Sun is down, you appreciate recording your results in a calendar where the date doesn't change in the middle of your workday. But even the
+      Julian day convention bears witness to the eurocentrism of 19th century astronomy&mdash;noon at Greenwich is midnight on the other side of the world. But the Julian day notation is so deeply embedded in astronomy that it is unlikely to be displaced
       at any time in the foreseeable future. It is an ideal system for storing dates in computer programs, free of cultural bias and discontinuities at various dates, and can be readily transformed into other calendar systems, as the source code for this
       page illustrates. Use Julian days and fractions (stored in 64 bit or longer floating point numbers) in your programs, and be ready for Y10K, Y100K, and Y1MM!
       <br clear="left" /> </p>
-    <form name="modifiedjulianday" action="javascript:return%20false;" id="modifiedjulianday">
-      <table class="l">
+    <h3>
+    <a name="modifiedJulianDay" id="modifiedJulianDay">Modified Julian Day</a>
+  </h3>
+    <form name="modifiedJulianDayForm" action="javascript:return%20false;" id="modifiedJulianDayForm">
+      <table class="l" summary="">
         <tr>
           <td align="center"> <b>Modified Julian day:</b>
             <input type="text" name="day" value="" size="16" /> </td>
@@ -148,10 +151,10 @@
       no such objects existed prior to October 4, 1957, all satellite-related MJDs are positive.
       <br clear="left" /> </p>
     <h3>
-    <a name="juliancalendar" id="juliancalendar">Julian Calendar</a>
+    <a name="julianCalendar" id="julianCalendar">Julian Calendar</a>
   </h3>
-    <form name="juliancalendar" action="javascript:return%20false;" id="juliancalendar">
-      <table class="l">
+    <form name="julianForm" action="javascript:return%20false;" id="julianForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">
@@ -189,9 +192,11 @@
       calendar, no attempt is made to synchronise the start of months to the phases of the Moon.
       <br clear="left" /> </p>
     <!--
-    <h3>Gregorian Serial Day</h3>
-    <form name="gregserial" action="javascript:return%20false;" id="gregserial">
-      <table class="l">
+    <h3>
+      <a name="gregorianSerialDay" id="gregorianSerialDay">Gregorian Serial Day</a>
+    </h3>
+    <form name="gregorianSerialDayForm" action="javascript:return%20false;" id="gregorianSerialDayForm">
+      <table class="l" summary="">
         <tr>
           <td align="center"> <b>Gregorian serial day:</b>
             <input type="text" name="day" value="" size="16" /> </td>
@@ -205,10 +210,10 @@
     <br clear="left" />
     -->
     <h3>
-    <a name="hebrew" id="hebrew">Hebrew Calendar</a>
-  </h3>
-    <form name="hebrew" action="javascript:return%20false;" id="hebrew">
-      <table class="l">
+      <a name="hebrewCalendar" id="hebrewCalendar">Hebrew Calendar</a>
+    </h3>
+    <form name="hebrewForm" action="javascript:return%20false;" id="hebrewForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">
@@ -242,21 +247,21 @@
         </tr>
       </table>
     </form>
-    <p>The Hebrew (or Jewish) calendar attempts to simultaneously maintain alignment between the months and the seasons and synchronise months with the Moon&mdash;it is thus deemed a &ldquot; <em>luni-solar calendar</em>&rdquot;. In addition, there are constraints
+    <p>The Hebrew (or Jewish) calendar attempts to simultaneously maintain alignment between the months and the seasons and synchronise months with the Moon&mdash;it is thus deemed a &quot; <em>luni-solar calendar</em>&quot;. In addition, there are constraints
       on which days of the week on which a year can begin and to shift otherwise required extra days to prior years to keep the length of the year within the prescribed bounds. This isn't easy, and the computations required are correspondingly intricate.</p>
-    <p>Years are classified as <em>common</em>(normal) or <em>embolismic</em>(leap) years which occur in a 19 year cycle in years 3, 6, 8, 11, 14, 17, and 19. In an embolismic (leap) year, an extra <em>month</em>of 29 days, &ldquot;Veadar&rdquot; or &ldquot;Adar&#160;II&rdquot;,
-      is added to the end of the year after the month &ldquot;Adar&rdquot;, which is designated &ldquot;Adar&#160;I&rdquot; in such years. Further, years may be <em>deficient</em>, <em>regular</em>, or <em>complete</em>, having respectively 353, 354,
-      or 355 days in a common year and 383, 384, or 385 days in embolismic years. Days are defined as beginning at sunset, and the calendar begins at sunset the night before Monday, October 7, 3761 <span class="bcad">B.C.E.</span>in the Julian calendar,
-      or Julian day 347995.5. Days are numbered with Sunday as day 1, through Saturday: day 7.</p>
+    <p>Years are classified as <em>common</em>(normal) or <em>embolismic</em>(leap) years which occur in a 19 year cycle in years 3, 6, 8, 11, 14, 17, and 19. In an embolismic (leap) year, an extra <em>month</em>of 29 days, &quot;Veadar&quot; or &quot;Adar&#160;II&quot;,
+      is added to the end of the year after the month &quot;Adar&quot;, which is designated &quot;Adar&#160;I&quot; in such years. Further, years may be <em>deficient</em>, <em>regular</em>, or <em>complete</em>, having respectively 353, 354, or 355 days
+      in a common year and 383, 384, or 385 days in embolismic years. Days are defined as beginning at sunset, and the calendar begins at sunset the night before Monday, October 7, 3761 <span class="bcad">B.C.E.</span>in the Julian calendar, or Julian
+      day 347995.5. Days are numbered with Sunday as day 1, through Saturday: day 7.</p>
     <p>The average length of a month is 29.530594 days, extremely close to the mean <em>synodic month</em>(time from new Moon to next new Moon) of 29.530588 days. Such is the accuracy that more than 13,800 years elapse before a single day discrepancy between
       the calendar's average reckoning of the start of months and the mean time of the new Moon. Alignment with the solar year is better than the Julian calendar, but inferior to the Gregorian. The average length of a year is 365.2468 days compared to
       the actual solar tropical year (time from equinox to equinox) of 365.24219 days, so the calendar accumulates one day of error with respect to the solar year every 216 years.
       <br clear="left" /> </p>
     <h3>
-    <a name="islamic" id="islamic">Islamic Calendar</a>
-  </h3>
-    <form name="islamic" action="javascript:return%20false;" id="islamic">
-      <table class="l">
+      <a name="islamicCalendar" id="islamicCalendar">Islamic Calendar</a>
+    </h3>
+    <form name="islamicForm" action="javascript:return%20false;" id="islamicForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">
@@ -292,18 +297,18 @@
     </form>
     <p>The Islamic calendar is purely lunar and consists of twelve alternating months of 30 and 29 days, with the final 29 day month extended to 30 days during leap years. Leap years follow a 30 year cycle and occur in years 1, 5, 7, 10, 13, 16, 18, 21,
       24, 26, and 29. Days are considered to begin at sunset. The calendar begins on Friday, July 16th, 622 <span class="bcad">C.E.</span>in the Julian calendar, Julian day 1948439.5, the day of Muhammad's flight from Mecca to Medina, with sunset on the
-      preceding day reckoned as the first day of the first month of year 1 A.H.&mdash;&ldquot; <em lang="la" xml:lang="la">Anno Hegir&aelig;</em>&rdquot;&mdash;the Arabic word for &ldquot;separate&rdquot; or &ldquot;go away&rdquot;. The names for the
-      days are just their numbers: Sunday is the first day and Saturday the seventh; the week is considered to begin on Saturday.</p>
+      preceding day reckoned as the first day of the first month of year 1 A.H.&mdash;&quot; <em lang="la" xml:lang="la">Anno Hegir&aelig;</em>&quot;&mdash;the Arabic word for &quot;separate&quot; or &quot;go away&quot;. The names for the days are just
+      their numbers: Sunday is the first day and Saturday the seventh; the week is considered to begin on Saturday.</p>
     <p>Each cycle of 30 years thus contains 19 normal years of 354 days and 11 leap years of 355, so the average length of a year is therefore ((19 &times; 354) + (11 &times; 355)) / 30 = 354.365... days, with a mean length of month of 1/12 this figure,
       or 29.53055... days, which closely approximates the mean <em>synodic month</em>(time from new Moon to next new Moon) of 29.530588 days, with the calendar only slipping one day with respect to the Moon every 2525 years. Since the calendar is fixed
       to the Moon, not the solar year, the months shift with respect to the seasons, with each month beginning about 11 days earlier in each successive solar year.</p>
     <p>The calendar presented here is the most commonly used civil calendar in the Islamic world; for religious purposes months are defined to start with the first observation of the crescent of the new Moon.
       <br clear="left" /> </p>
     <h3>
-    <a name="persian" id="persian">Persian Calendar</a>
+    <a name="persianCalendar" id="persianCalendar">Persian Calendar</a>
   </h3>
-    <form name="persian" action="javascript:return%20false;" id="persian">
-      <table class="l">
+    <form name="persianForm" action="javascript:return%20false;" id="persianForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">
@@ -352,10 +357,10 @@
       <br clear="left" /> </p>
     <div style="margin-left: 2em; padding-left: 12px; padding-right: 12px; background-color: #FFFFC0; color: inherit;">
       <h4>
-      <a name="persiana" id="persiana">Persian Algorithmic Calendar</a>
-    </h4>
-      <form name="persiana" action="javascript:return%20false;" id="persiana">
-        <table class="r">
+        <a name="persianAlgorithmicCalendar" id="persianAlgorithmicCalendar">Persian Algorithmic Calendar</a>
+      </h4>
+      <form name="persianAlgorithmicForm" action="javascript:return%20false;" id="persianAlgorithmicForm">
+        <table class="r" summary="">
           <tr>
             <th>Date:</th>
             <td align="center">
@@ -401,10 +406,10 @@
         <br clear="right" /> </p>
     </div>
     <h3>
-    <a name="mayan" id="mayan">Mayan Calendars</a>
-  </h3>
-    <form name="mayancount" action="javascript:return%20false;" id="mayancount">
-      <table class="l">
+      <a name="mayanCalendar" id="mayanCalendar">Mayan Calendars</a>
+    </h3>
+    <form name="mayanCount" action="javascript:return%20false;" id="mayanCount">
+      <table class="l" summary="">
         <tr>
           <td align="center"> <b>Mayan Long Count</b>
             <br />
@@ -427,7 +432,7 @@
       the religious calendar. All of the Mayan calendars are based on serial counting of days without means for synchronising the calendar to the Sun or Moon, although the Long Count and Haab calendars contain cycles of 360 and 365 days, respectively,
       which are roughly comparable to the solar year. Based purely on counting days, the Long Count more closely resembles the Julian Day system and contemporary computer representations of date and time than other calendars devised in antiquity. Also
       distinctly modern in appearance is that days and cycles count from zero, not one as in most other calendars, which simplifies the computation of dates, and that numbers as opposed to names were used for all of the cycles.</p>
-    <table class="r">
+    <table class="r" summary="">
       <tr>
         <th>Cycle</th>
         <th>Composed of</th>
@@ -512,10 +517,10 @@
       <br clear="all" /> </p>
     <!-- -->
     <h3>
-    <a name="bahai" id="bahai">Bah&aacute;'&iacute; Calendar</a>
+    <a name="bahaiCalendar" id="bahaiCalendar">Bah&aacute;'&iacute; Calendar</a>
   </h3>
-    <form name="bahai" action="javascript:return%20false;" id="bahai">
-      <table class="l">
+    <form name="bahaiForm" action="javascript:return%20false;" id="bahaiForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">Kull-i-Shay:&#160;
@@ -600,8 +605,8 @@
       </table>
     </form>
     <p>The Bah&aacute;'&iacute; calendar is a solar calendar organised as a hierarchy of cycles, each of length 19, commemorating the 19 year period between the 1844 proclamation of the B&aacute;b in <a href="/images/eclipse99/iranimages.html#Shiraz" target="_blank">
-  Shiraz</a>and the revelation by Bah&aacute;'u'll&aacute;h in 1863. Days are named in a cycle of 19 names. Nineteen of these cycles of 19 days, usually called &ldquot;months&rdquot; even though they have nothing whatsoever to do with the Moon, make up
-      a year, with a period between the 18th and 19th months referred to as <em>Ayy&aacute;m-i-H&aacute;</em>not considered part of any month; this period is four days in normal years and five days in leap years. The rule for leap years is identical to
+  Shiraz</a>and the revelation by Bah&aacute;'u'll&aacute;h in 1863. Days are named in a cycle of 19 names. Nineteen of these cycles of 19 days, usually called &quot;months&quot; even though they have nothing whatsoever to do with the Moon, make up a
+      year, with a period between the 18th and 19th months referred to as <em>Ayy&aacute;m-i-H&aacute;</em>not considered part of any month; this period is four days in normal years and five days in leap years. The rule for leap years is identical to
       that of the Gregorian calendar, so the Bah&aacute;'&iacute; calendar shares its accuracy and remains synchronised. The same cycle of 19 names is used for days and months.</p>
     <p>The year begins at the equinox, March 21, the Feast of Naw-R&uacute;z; days begin at sunset. Years have their own cycle of 19 names, called the <em>V&aacute;hid</em>. Successive cycles of 19 years are numbered, with cycle 1 commencing on March 21,
       1844, the year in which the B&aacute;b announced his prophecy. Cycles, in turn, are assembled into <em>Kull-I-Shay</em>super-cycles of 361 (19&sup2;) years. The first <em>Kull-I-Shay</em>will not end until Gregorian calendar year 2205. A week of
@@ -609,10 +614,10 @@
       <br clear="left" /> </p>
     <!-- -->
     <h3>
-    <a name="indian" id="indian">Indian Civil Calendar</a>
+    <a name="indianCivilCalendar" id="indianCivilCalendar">Indian Civil Calendar</a>
   </h3>
-    <form name="indiancivilcalendar" action="javascript:return%20false;" id="indiancivilcalendar">
-      <table class="l">
+    <form name="indianCivilForm" action="javascript:return%20false;" id="indianCivilForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">
@@ -653,10 +658,10 @@
       rule to the sum.
       <br clear="left" /> </p>
     <h3>
-    <a name="French_Republican" id="French_Republican">French Republican Calendar</a>
-  </h3>
-    <form name="french" action="javascript:return%20false;" id="french">
-      <table class="l">
+      <a name="frenchRepublicanCalendar" id="frenchRepublicanCalendar">French Republican Calendar</a>
+    </h3>
+    <form name="frenchRepublicanForm" action="javascript:return%20false;" id="frenchRepublicanForm">
+      <table class="l" summary="">
         <tr>
           <th>Date:</th>
           <td align="center">Ann&eacute;e
@@ -711,16 +716,16 @@
       </table>
     </form>
     <p>The French Republican calendar was adopted by a <a href="fr_decret.html" target="_blank">decree</a>of <em lang="fr" xml:lang="fr">La Convention Nationale</em>on Gregorian date October 5, 1793 and went into effect the following November 24th, on which
-      day Fabre d'&eacute;glantine proposed to the <em lang="fr" xml:lang="fr">Convention</em>the names for the months. It incarnates the revolutionary spirit of &ldquot;Out with the old! In with the relentlessly rational!&rdquot; which later gave rise
-      in 1795 to the metric system of weights and measures which has proven more durable than the Republican calendar.</p>
+      day Fabre d'&eacute;glantine proposed to the <em lang="fr" xml:lang="fr">Convention</em>the names for the months. It incarnates the revolutionary spirit of &quot;Out with the old! In with the relentlessly rational!&quot; which later gave rise in
+      1795 to the metric system of weights and measures which has proven more durable than the Republican calendar.</p>
     <p>The calendar consists of 12 months of 30 days each, followed by a five- or six-day holiday period, the <em lang="fr" xml:lang="fr">jours compl&eacute;mentaires</em>or <em lang="fr" xml:lang="fr">sans-culottides</em>. Months are grouped into four seasons;
       the three months of each season end with the same letters and rhyme with one another. The calendar begins on Gregorian date September 22nd, 1792, the September equinox and date of the founding of the First Republic. This day is designated the first
       day of the month of Vend&eacute;miaire in year 1 of the Republic. Subsequent years begin on the day in which the September equinox occurs as reckoned at the Paris meridian. Days begin at true solar midnight. Whether the <em lang="fr" xml:lang="fr">sans-culottides</em>period
       contains five or six days depends on the actual date of the equinox. Consequently, there is no leap year rule <em lang="la" xml:lang="la">per se</em>: 366 day years do not recur in a regular pattern but instead follow the dictates of astronomy.
       The calendar therefore stays perfectly aligned with the seasons. No attempt is made to synchronise months with the phases of the Moon.</p>
     <p>The Republican calendar is rare in that it has no concept of a seven day week. Each thirty day month is divided into three <em lang="fr" xml:lang="fr">d&eacute;cades</em>of ten days each, the last of which, <em lang="fr" xml:lang="fr">d&eacute;cadi</em>,
-      was the day of rest. (The word &ldquot; <em lang="fr" xml:lang="fr">d&eacute;cade</em>&rdquot; may confuse English speakers; the French noun denoting ten years is &ldquot; <em lang="fr" xml:lang="fr">d&eacute;cennie</em>&rdquot;.) The names of days
-      in the <em lang="fr" xml:lang="fr">d&eacute;cade</em>are derived from their number in the ten day sequence. The five or six days of the <em lang="fr" xml:lang="fr">sans-culottides</em>do not bear the names of the <em lang="fr" xml:lang="fr">d&eacute;cade</em>.
+      was the day of rest. (The word &quot; <em lang="fr" xml:lang="fr">d&eacute;cade</em>&quot; may confuse English speakers; the French noun denoting ten years is &quot; <em lang="fr" xml:lang="fr">d&eacute;cennie</em>&quot;.) The names of days in the
+      <em lang="fr" xml:lang="fr">d&eacute;cade</em>are derived from their number in the ten day sequence. The five or six days of the <em lang="fr" xml:lang="fr">sans-culottides</em>do not bear the names of the <em lang="fr" xml:lang="fr">d&eacute;cade</em>.
       Instead, each of these holidays commemorates an aspect of the republican spirit. The last, <em lang="fr" xml:lang="fr">jour de la R&eacute;volution</em>, occurs only in years of 366 days.</p>
     <p>Napol&eacute;on abolished the Republican calendar in favour of the Gregorian on January 1st, 1806. Thus France, one of the first countries to adopt the Gregorian calendar (in December 1582), became the only country to subsequently abandon and then
       re-adopt it. During the period of the Paris Commune uprising in 1871 the Republican calendar was again briefly used.</p>
@@ -731,10 +736,10 @@
       <br clear="left"
       /> </p>
     <h3>
-    <a name="ISO8601" id="ISO8601">ISO-8601 Week and Day, and Day of Year</a>
+    <a name="iso8601week" id="iso8601week">ISO-8601 Week and Day, and Day of Year</a>
   </h3>
-    <form name="isoweek" action="javascript:return%20false;" id="isoweek">
-      <table class="l">
+    <form name="iso8601WeekForm" action="javascript:return%20false;" id="iso8601WeekForm">
+      <table class="l" summary="">
         <tr>
           <td align="center">Day
             <input type="text" name="day" value="" size="3" />of week
@@ -748,16 +753,17 @@
       </table>
     </form>
     <p>The <a href="http://www.iso.ch/" target="_blank">International Standards
-  Organisation</a>(ISO) issued Standard ISO 8601, &ldquot;Representation of Dates&rdquot; in 1988, superseding the earlier ISO 2015. The bulk of the standard consists of standards for representing dates in the Gregorian calendar including the highly recommended
-      &ldquot; <b>YYYY-MM-DD</b>&rdquot; form which is unambiguous, free of cultural bias, can be sorted into order without rearrangement, and is Y9K compliant. In addition, ISO 8601 formally defines the &ldquot;calendar week&rdquot; often encountered
-      in commercial transactions in Europe. The first calendar week of a year: week 1, is that week which contains the first Thursday of the year (or, equivalently, the week which includes January 4th of the year; the first day of that week is the previous
-      Monday). The last week: week 52 or 53 depending on the date of Monday in the first week, is that which contains December 28th of the year. The first ISO calendar week of a given year starts with a Monday which can be as early as December 29th of
-      the previous year or as late as January 4th of the present; the last calendar week can end as late as Sunday, January 3rd of the subsequent year. ISO 8601 dates in year, week, and day form are written with a &ldquot;W&rdquot; preceding the week
-      number, which bears a leading zero if less than 10, for example February 29th, 2000 is written as 2000-02-29 in year, month, day format and 2000-W09-2 in year, week, day form; since the day number can never exceed 7, only a single digit is required.
-      The hyphens may be elided for brevity and the day number omitted if not required. You will frequently see date of manufacture codes such as &ldquot;00W09&rdquot; stamped on products; this is an abbreviation of 2000-W09, the ninth week of year 2000.
-      <br clear="left" /> </p>
-    <form name="isoday" action="javascript:return%20false;" id="isoday">
-      <table class="l">
+  Organisation</a>(ISO) issued Standard ISO 8601, &quot;Representation of Dates&quot; in 1988, superseding the earlier ISO 2015. The bulk of the standard consists of standards for representing dates in the Gregorian calendar including the highly recommended
+      &quot; <b>YYYY-MM-DD</b>&quot; form which is unambiguous, free of cultural bias, can be sorted into order without rearrangement, and is Y9K compliant. In addition, ISO 8601 formally defines the &quot;calendar week&quot; often encountered in commercial
+      transactions in Europe. The first calendar week of a year: week 1, is that week which contains the first Thursday of the year (or, equivalently, the week which includes January 4th of the year; the first day of that week is the previous Monday).
+      The last week: week 52 or 53 depending on the date of Monday in the first week, is that which contains December 28th of the year. The first ISO calendar week of a given year starts with a Monday which can be as early as December 29th of the previous
+      year or as late as January 4th of the present; the last calendar week can end as late as Sunday, January 3rd of the subsequent year. ISO 8601 dates in year, week, and day form are written with a &quot;W&quot; preceding the week number, which bears
+      a leading zero if less than 10, for example February 29th, 2000 is written as 2000-02-29 in year, month, day format and 2000-W09-2 in year, week, day form; since the day number can never exceed 7, only a single digit is required. The hyphens may
+      be elided for brevity and the day number omitted if not required. You will frequently see date of manufacture codes such as &quot;00W09&quot; stamped on products; this is an abbreviation of 2000-W09, the ninth week of year 2000. </p>
+    <br clear="left"
+    />
+    <form name="isoDay" action="javascript:return%20false;" id="isoDay">
+      <table class="l" summary="">
         <tr>
           <td align="center">Day
             <input type="text" name="day" value="" size="3" />of year
@@ -774,16 +780,15 @@
       in history.</p>
     <p>ISO 8601 permits us to jettison the historical and cultural baggage of weeks and months and express a date simply by the year and day number within that year, ranging from 001 for January 1st through 365 (366 in a leap year) for December 31st. This
       format makes it easy to do arithmetic with dates within a year, and only slightly more complicated for periods which span year boundaries. You'll see this representation used in project planning and for specifying delivery dates. ISO dates in this
-      form are written as &ldquot; <b>YYYY-DDD</b>&rdquot;, for example 2000-060 for February 29th, 2000; leading zeroes are always written in the day number, but the hyphen may be omitted for brevity.</p>
+      form are written as &quot; <b>YYYY-DDD</b>&quot;, for example 2000-060 for February 29th, 2000; leading zeroes are always written in the day number, but the hyphen may be omitted for brevity.</p>
     <p>All ISO 8601 date formats have the advantages of being fixed length (at least until the Y10K crisis rolls around) and, when stored in a computer, of being sorted in date order by an alphanumeric sort of their textual representations. The ISO week
       and day and day of year calendars are derivative of the Gregorian calendar and share its accuracy.
       <br clear="left" /> </p>
     <h3>
-    <a name="unixtime" id="unixtime">Unix
-    <tt>time()</tt>value</a>
+    <a name="unixTime" id="unixTime">Unix <tt>time()</tt>value</a>
   </h3>
-    <form name="unixtime" action="javascript:return%20false;" id="unixtime">
-      <table class="l">
+    <form name="unixTimeForm" action="javascript:return%20false;" id="unixTimeForm">
+      <table class="l" summary="">
         <tr>
           <td align="center"> <b>Unix time() value:</b>
             <input type="text" name="time" value="" size="14" /> </td>
@@ -807,10 +812,10 @@
       (author of <tt>sendmail</tt>) for pointing out these historical nuggets.
       <br clear="left" /> </p>
     <h3>
-    <a name="excelserial1900" id="excelserial1900">Excel Serial Day Number</a>
+    <a name="excelSerial1900" id="excelSerial1900">Excel Serial Day Number</a>
   </h3>
-    <form name="excelserial1900" action="javascript:return%20false;" id="excelserial1900">
-      <table class="l">
+    <form name="excelSerial1900Form" action="javascript:return%20false;" id="excelSerial1900Form">
+      <table class="l" summary="">
         <tr>
           <td align="center"> <b>
             <font size="+1">1900 Date System (PC)</font>
@@ -825,12 +830,12 @@
       </table>
     </form>
     <p>Spreadsheet calculations frequently need to do arithmetic with date and time quantities&mdash;for example, calculating the interest on a loan with a given term. When Microsoft Excel was introduced for the PC Windows platform, it defined dates and
-      times as &ldquot;serial values&rdquot;, which express dates and times as the number of days elapsed since midnight on January 1, 1900 with time given as a fraction of a day. Midnight on January 1, 1900 is day 1.0 in this scheme. Time zone is unspecified
+      times as &quot;serial values&quot;, which express dates and times as the number of days elapsed since midnight on January 1, 1900 with time given as a fraction of a day. Midnight on January 1, 1900 is day 1.0 in this scheme. Time zone is unspecified
       in Excel dates, with the <tt>NOW()</tt>function returning whatever the computer's clock is set to&mdash;in most cases local time, so when combining data from machines in different time zones you usually need to add or subtract the bias, which can
       differ over the year due to observance of summer time. Here we assume Excel dates represent Universal (Greenwich Mean) time, since there isn't any other rational choice. But don't assume you can always get away with this.</p>
     <p>You'd be entitled to think, therefore, that conversion back and forth between PC Excel serial values and Julian day numbers would simply be a matter of adding or subtracting the Julian day number of December 31, 1899 (since the PC Excel days are numbered
       from 1). But this is a <em>Microsoft</em>calendar, remember, so one must first look to make sure it doesn't contain one of those bonehead blunders characteristic of Microsoft. As is usually the case, one doesn't have to look very far. If you have
-      a copy of PC Excel, fire it up, format a cell as containing a date, and type 60 into it: out pops &ldquot;February 29, 1900&rdquot;. News apparently travels <em>very</em>slowly from Rome to Redmond&mdash;ever since Pope Gregory <a href="IG_Latin.html"
+      a copy of PC Excel, fire it up, format a cell as containing a date, and type 60 into it: out pops &quot;February 29, 1900&quot;. News apparently travels <em>very</em>slowly from Rome to Redmond&mdash;ever since Pope Gregory <a href="IG_Latin.html"
        target="_blank">revised the calendar</a>in 1582, years divisible by 100 have <em>not</em>been leap years, and consequently the year 1900 contained no February 29th. Due to this morsel of information having been lost somewhere between the Holy See
       and the <a href="/documents/top10.html">Infernal</a>Seattle monopoly, all Excel day numbers for days subsequent to February 28th, 1900 are one day greater than the actual day count from January 1, 1900. Further, note that any computation of the
       number of days in a period which begins in January or February 1900 and ends in a subsequent month will be off by one&mdash;the day count will be one greater than the actual number of days elapsed.</p>
@@ -841,9 +846,9 @@
       in the representation of numbers), Excel doesn't do so. Day 0 is deemed the idiotic January 0, 1900 (at least in Excel 97), and negative days and those in Y10K and beyond are not handled at all. Further, old versions of Excel did date arithmetic
       using 16 bit quantities and did not support day numbers greater than 65380 (December 31, 2078); I do not know in which release of Excel this limitation was remedied.
       <br clear="left" /> </p>
-    <a name="excelserial1904" id="excelserial1904"></a>
-    <form name="excelserial1904" action="javascript:return%20false;" id="excelserial1904">
-      <table class="l">
+    <a name="excelSerial1904" id="excelSerial1904"></a>
+    <form name="excelSerial1904Form" action="javascript:return%20false;" id="excelSerial1904Form">
+      <table class="l" summary="">
         <tr>
           <td align="center"> <b>
             <font size="+1">1904 Date System (Macintosh)</font>
@@ -861,13 +866,13 @@
       system based on the MacOS native time format which counts days elapsed since January 1, 1904. To further obfuscate matters, on the Macintosh they chose to number days from zero rather than 1, so midnight on January 1, 1904 has serial value 0.0.
       By starting in 1904, they avoided screwing up 1900 as they did on the PC. So now Excel users who interchange data have to cope with two incompatible schemes for counting days, one of which thinks 1900 was a leap year and the other which doesn't
       go back that far. To compound the fun, you can now select either date system on either platform, so you can't be certain dates are compatible even when receiving data from another user with same kind of machine you're using. I'm sure this was all
-      done in the interest of the &ldquot;efficiency&rdquot; of which Microsoft is so fond. As we all know, it would take a computer <em>almost forever</em>to add or subtract four in order to make everything seamlessly interchangeable.</p>
+      done in the interest of the &quot;efficiency&quot; of which Microsoft is so fond. As we all know, it would take a computer <em>almost forever</em>to add or subtract four in order to make everything seamlessly interchangeable.</p>
     <p>Macintosh Excel day numbers are valid only between 0 (January 1, 1904) and 2957003 (December 31, 9999). Although a serial day counting scheme has no difficulty coping with arbitrary date ranges or days before the start of the epoch (given sufficient
       precision in the representation of numbers), Excel doesn't do so. Negative days and those in Y10K and beyond are not handled at all. Further, old versions of Excel did date arithmetic using 16 bit quantities and did not support day numbers greater
       than 63918 (December 31, 2078); I do not know in which release of Excel this limitation was remedied.
       <br clear="left" /> </p>
     <script type="text/javascript" language="JavaScript">
-      // &lt; ![CDATA[
+      // <![CDATA[
       <!--
       if (location.search != "") {
         presetDataToRequest(location.search.substring(1));
@@ -875,19 +880,17 @@
         calcGregorian(); // Calculate today's values in other calendars
       }
       // -->
-      //]]&gt;
+      //]]>
 
     </script>
     <h3>References</h3>
-    <table class="a">
+    <table class="a" summary="">
       <tr>
-        <td bgcolor="#E0E0E0" align="center"> <font face="Arial, Helvetica, sans-serif" size="-1">Click on titles to
+        <td bgcolor="#e0e0e0" align="center"> <font face="Arial, Helvetica, sans-serif" size="-1">Click on titles to
         order books on-line from
         <br />
-        <a href="http://www.amazon.com/exec/obidos/redirect-home/fourmilabwwwfour"
-        target="Amazon_Fourmilab">
-          <img src="/images/icons/amazon.gif" vspace="3" width="90" height="29"
-          border="0" alt="Amazon.com." />
+        <a href="http://www.amazon.com/exec/obidos/redirect-home/fourmilabwwwfour" target="Amazon_Fourmilab">
+          <img src="/images/icons/amazon.gif" vspace="3" width="90" height="29" border="0" alt="Amazon.com." />
         </a></font> </td>
       </tr>
     </table>
@@ -910,7 +913,7 @@
     target="_blank">calendars</a>.</dt> </dl>
     <br clear="right" />
     <hr />
-    <table align="right">
+    <table align="right" summary="">
       <tr>
         <td align="center">
           <form name="feedback" method="post" action="/cgi-bin/FeedbackForm.pl" id="feedback">
