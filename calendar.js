@@ -1078,8 +1078,8 @@ function updateFromGregorian() {
 
     //  Update Gregorian serial number
 
-    if (document.gregorianSerialForm != null) {
-        document.gregorianSerialForm.day.value = j - J0000;
+    if (document.gregorianSerialDayForm != null) {
+        document.gregorianSerialDayForm.day.value = j - J0000;
     }
 
     //  Update Excel 1900 and 1904 day serial numbers
