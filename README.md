@@ -8,3 +8,6 @@ This version features these enhancements
 - corrected French spelling as it was in use at the time (1793)
 - extracted the CSS styles into a separate file (style.css)
 - converted special characters to HTML entities, to be plan 7-bit characters throughout
+- cleaned up the duplicate HTML IDs
+- corrected the HTML tidy warnings
+
